@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
     size_t size = ftell(script);
     fseek(script, 0L, SEEK_SET);
 
-    char *code = calloc(size + 1, sizeof(char));
+    char *code = calloc(size, sizeof(char));
     fread(code, sizeof(char), size, script);
 
     fclose(script);
