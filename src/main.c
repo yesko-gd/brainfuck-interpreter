@@ -24,20 +24,7 @@ int main(int argc, char **argv) {
     fseek(script, 0L, SEEK_SET);
 
     char *code = calloc(size + 1, sizeof(char));
-
-    for (size_t i = 0; i < size; i++) {
-        char character = fgetc(script);
-
-        if (character == EOF) {
-            if (feof(script))
-                fprintf(stderr, "Unexpected end of file at character %zu\n", i);
-            else if (ferror(script))
-                perror("Error reading file");
-            break;
-        }
-
-        code[i] = character;
-    }
+    fread(code, sizeof(char), size, script);
 
     fclose(script);
     
