@@ -1,4 +1,4 @@
-# Program
+# Description
 This is a run-time interpreter for the esoteric programming language Brainfuck, written in C.
 
 To run it, pass the script to be interpreted as the first command-line argument.
